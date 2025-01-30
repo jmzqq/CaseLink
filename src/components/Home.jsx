@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import styled from "styled-components";
@@ -31,7 +32,26 @@ function Home() {
       border: 2px solid rgb(0, 0, 0);
       outline: none;
     }
-  `;
+
+    @media (max-width: 768px) {
+      width: 240px;
+      font-size: 0.7rem;
+    }
+  `
+
+  const Icons = styled.li`
+  display:flex;
+  justify-content: center;
+  margin-left: 15px;
+
+  @media (max-width: 768px) {
+    border: solid rgba(206, 206, 206, 0.79) 1px;
+    margin-left: 0px;
+
+  @media (min-width: 769px) {
+    border: none;
+  }
+  `
 
   const TitleGreen = styled.h2`
     text-align: center;
@@ -44,7 +64,7 @@ function Home() {
     font-size: 1.65rem;
     margin-left: auto;
     margin-right: auto;
-  `;
+  `
 
   const TitleDark = styled.h2`
     text-align: center;
@@ -57,14 +77,7 @@ function Home() {
     font-size: 1.65rem;
     margin-left: auto;
     margin-right: auto;
-  `;
-
-  const PostInput = styled.input`
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  `;
+  `
 
   const CardBodyJob = styled.div`
   min-height: 190px;
@@ -82,7 +95,7 @@ function Home() {
     min-height: 140px; 
     padding: 1.5rem 0.75rem;
   }
-  `;
+  `
 
   const CardBodyFeedback = styled.div`
   min-height: 150px;
@@ -99,7 +112,7 @@ function Home() {
     min-height: 100px;
     padding: 0.75rem;
   }
-  `;
+  `
 
   const CardBorderNone = styled.div`
   border: none;
@@ -111,52 +124,85 @@ function Home() {
   padding: 18px;
   `
 
+  const Footer = styled.footer`
+  background-color: #386A3f; /* Cor principal da identidade visual */
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+  margin-top: auto;
+
+  .footer-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+
+  .social-icons i {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: 0.3s;
+  }
+
+  .social-icons i:hover {
+    transform: scale(1.2);
+  }
+  `
+
+
   return (
     <div className="d-flex flex-column min-vh-100">
-      <div className="navbar navbar-expand-lg bg-light px-5 shadow-sm">
+      <div className="navbar navbar-expand-lg bg-light px-lg-5 p-0 shadow-sm">
         <div className="container-fluid justify-content-start">
-          <img src="./src/assets/logo.svg" alt="Logo" className="mr-2" />
+          <img src="./src/assets/logo.svg" alt="Logo" className="img-fluid" style={{ maxHeight: "50px" }} />
           <SearchInput
             type="search"
             placeholder="Pesquisar"
             className="mx-2"
           />
+          <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style={{ outline: "none"}}>
+            <span className="navbar-toggler-icon"></span>
+          </button>
         </div>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
+          <ul className="navbar-nav ms-auto my-0">
+            <Icons>
               {/*Using the react-router-dom link*/}
               <Link
                 to="#"
-                className={`nav-link ${location.pathname === "#" ? "active" : ""}`}
+                className= {`nav-link ${location.pathname === "#" ? "active" : "p-0 my-1"}`}
               >
                 <i className="bi bi-house-door text fs-2"></i>
               </Link>
-            </li>
-            <li className="nav-item">
+            </Icons>
+            <Icons>
               <Link
                 to="#"
-                className={`nav-link ${location.pathname === "#" ? "active" : ""}`}
+                className={`nav-link ${location.pathname === "#" ? "active" : "p-0 my-1"}`}
               >
                 <i className="bi bi-file-earmark-post text fs-2"></i>
               </Link>
-            </li>
-            <li className="nav-item">
+            </Icons>
+            <Icons>
               <Link
                 to="#"
-                className={`nav-link ${location.pathname === "#" ? "active" : ""}`}
+                className={`nav-link ${location.pathname === "#" ? "active" : "p-0 my-1"}`}
               >
                 <i className="bi bi-bell text fs-2"></i>
               </Link>
-            </li>
-            <li className="nav-item">
+            </Icons>
+            <Icons>
               <Link
                 to="#"
-                className={`nav-link ${location.pathname === "#" ? "active" : ""}`}
+                className={`nav-link ${location.pathname === "#" ? "active" : "p-0 my-1"}`}
               >
                 <i className="bi bi-person-circle text fs-2"></i>
               </Link>
-            </li>
+            </Icons>
           </ul>
         </div>
       </div>
@@ -290,6 +336,15 @@ function Home() {
         </div>
       </section>
 
+      <Footer>
+        <div className="container">
+          <div className="row">
+            <div className="d-flex justify-content-center">
+              <p className="mb-2">© {new Date().getFullYear()} CaseLink.</p>
+            </div>
+          </div>
+        </div>
+      </Footer>
     </div>
   );
 }
