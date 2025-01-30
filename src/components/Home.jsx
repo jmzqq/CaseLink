@@ -7,39 +7,39 @@ import styled from "styled-components";
 
 function Home() {
   {/*Get the current location of the page*/ }
-  const location = useLocation();
+const location = useLocation();
 
   {/*Testing styled-components for input here I could also use style inline*/ }
-  const SearchInput = styled.input` 
-    padding: 10px;
-    padding-left: 35px;
-    border: 1px solid transparent;
-    border-radius: 0.6rem;
-    font-size: 0.8rem;
-    background-color: #f0f0f0;
-    width: 280px;
-    background-image: url('./src/assets/search.svg'); 
-    background-size: 20px 20px;
-    background-repeat: no-repeat;
-    background-position: 10px;
+const SearchInput = styled.input` 
+  padding: 10px;
+  padding-left: 35px;
+  border: 1px solid transparent;
+  border-radius: 0.6rem;
+  font-size: 0.8rem;
+  background-color: #f0f0f0;
+  width: 280px;
+  background-image: url('./src/assets/search.svg'); 
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: 10px;
     
-    &::placeholder {
-      font-size: 1rem;
-      color: #000000;
-    }
+  &::placeholder {
+    font-size: 1rem;
+    color: #000000;
+  }
 
-    &:focus {
-      border: 2px solid rgb(0, 0, 0);
-      outline: none;
-    }
+  &:focus {
+    border: 2px solid rgb(0, 0, 0);
+    outline: none;
+  }
 
-    @media (max-width: 768px) {
-      width: 240px;
-      font-size: 0.7rem;
-    }
+  @media (max-width: 768px) {
+    width: 240px;
+    font-size: 0.7rem;
+  }
   `
 
-  const Icons = styled.li`
+const Icons = styled.li`
   display:flex;
   justify-content: center;
   margin-left: 15px;
@@ -53,33 +53,33 @@ function Home() {
   }
   `
 
-  const TitleGreen = styled.h2`
-    text-align: center;
-    margin-bottom: 1rem;
-    background-color: rgb(55, 139, 80);
-    padding: 15px;
-    border-radius: 15px;
-    color: white;
-    width: 100%;
-    font-size: 1.65rem;
-    margin-left: auto;
-    margin-right: auto;
+const TitleGreen = styled.h2`
+  text-align: center;
+  margin-bottom: 1rem;
+  background-color: rgb(55, 139, 80);
+  padding: 15px;
+  border-radius: 15px;
+  color: white;
+  width: 100%;
+  font-size: 1.65rem;
+  margin-left: auto;
+  margin-right: auto;
   `
 
-  const TitleDark = styled.h2`
-    text-align: center;
-    margin-bottom: 1rem;
-    background-color: rgb(66, 70, 73);
-    padding: 15px;
-    border-radius: 15px;
-    color: white;
-    width: 100%;
-    font-size: 1.65rem;
-    margin-left: auto;
-    margin-right: auto;
+const TitleDark = styled.h2`
+  text-align: center;
+  margin-bottom: 1rem;
+  background-color: rgb(66, 70, 73);
+  padding: 15px;
+  border-radius: 15px;
+  color: white;
+  width: 100%;
+  font-size: 1.65rem;
+  margin-left: auto;
+  margin-right: auto;
   `
 
-  const CardBodyJob = styled.div`
+const CardBodyJob = styled.div`
   min-height: 190px;
   padding: 3rem 1.25rem;
   display: flex;
@@ -97,34 +97,30 @@ function Home() {
   }
   `
 
-  const CardBodyFeedback = styled.div`
+const CardBodyFeedback = styled.div`
   min-height: 150px;
   padding: 1.25rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  @media (max-width: 768px) 
-    min-height: 120px;
-    padding: 1rem;
-
-   @media (max-width: 576px) {
+  @media (max-width: 576px) {
     min-height: 100px;
     padding: 0.75rem;
   }
   `
 
-  const CardBorderNone = styled.div`
+const CardBorderNone = styled.div`
   border: none;
   }
   `
   
-  const CardBorderZero = styled.div`
+const CardBorderZero = styled.div`
   border: solid #fff;
   padding: 18px;
   `
 
-  const Footer = styled.footer`
+const Footer = styled.footer`
   background-color: #386A3f; /* Cor principal da identidade visual */
   color: white;
   padding: 40px 0;
@@ -197,8 +193,8 @@ function Home() {
             </Icons>
             <Icons>
               <Link
-                to="#"
-                className={`nav-link ${location.pathname === "#" ? "active" : "p-0 my-1"}`}
+                to="/Login"
+                className={`nav-link ${location.pathname === "/login" ? "active" : "p-0 my-1"}`}
               >
                 <i className="bi bi-person-circle text fs-2"></i>
               </Link>
