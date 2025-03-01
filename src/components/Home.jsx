@@ -268,7 +268,7 @@ const Footer = styled.footer`
                     <div className="card-body">
                       <h5 className="card-title text-center">Introdução ao React</h5>
                       <p className="card-text text-center">Aprenda a construir interfaces dinâmicas com React.</p>
-                      <Link to="/cursos" className="btn btn-dark d-flex justify-content-center">Ver Curso</Link>
+                      <Link to="#" className="btn btn-dark d-flex justify-content-center">Ver Curso</Link>
                     </div>
                   </CardBorderZero>
                 </div>
@@ -277,7 +277,7 @@ const Footer = styled.footer`
                     <div className="card-body">
                       <h5 className="card-title text-center">Marketing Digital</h5>
                       <p className="card-text text-center">Curso completo sobre estratégias de marketing digital para iniciantes.</p>
-                      <Link to="/cursos" className="btn btn-dark d-flex justify-content-center">Ver Curso</Link>
+                      <Link to="#" className="btn btn-dark d-flex justify-content-center">Ver Curso</Link>
                     </div>
                   </CardBorderZero>
                 </div>
@@ -286,7 +286,7 @@ const Footer = styled.footer`
                     <div className="card-body">
                       <h5 className="card-title text-center">Análise de Dados com Python</h5>
                       <p className="card-text text-center">Curso focado em análise de dados usando Python e bibliotecas populares.</p>
-                      <Link to="/cursos" className="btn btn-dark d-flex justify-content-center">Ver Curso</Link>
+                      <Link to="#" className="btn btn-dark d-flex justify-content-center">Ver Curso</Link>
                     </div>
                   </CardBorderZero>
                 </div>
@@ -295,7 +295,7 @@ const Footer = styled.footer`
                     <div className="card-body">
                       <h5 className="card-title text-center">Desenvolvimento Web com React</h5>
                       <p className="card-text text-center">Curso focado no aprendizado e aplicação de React para criação de interfaces dinâmicas e interativas.</p>
-                      <Link to="/cursos" className="btn btn-dark d-flex justify-content-center">Ver Curso</Link>
+                      <Link to="#" className="btn btn-dark d-flex justify-content-center">Ver Curso</Link>
                     </div>
                   </CardBorderZero>
                 </div>

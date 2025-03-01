@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import styled from "styled-components";
 
-const LoginContainer = styled.div`
+const SignupContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +26,7 @@ const Logo = styled.img`
   }
 `;
 
-const LoginForm = styled.form`
+const SignupForm = styled.form`
   background-color: #fff;
   padding: 80px 50px;
   border-radius: 12px;
@@ -85,30 +85,16 @@ const Button = styled.button`
   }
 `;
 
-const ForgotPasswordLink = styled.a`
-  font-size: 1rem;
-  color: #386A3f;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
-const Terms = styled.p`
-  font-size: 0.8rem;
-  margin-top: 15px;
-`
-
 const ErrorMessage = styled.p`
   color: red;
   font-size: 1rem;
   text-align: center;
 `;
 
-function Login() {
+function Signup() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
@@ -118,31 +104,37 @@ function Login() {
         setError("");
         setLoading(true);
 
-        if (!email || !password) {
+        if (!email || !password || !confirmPassword) {
             setError("Por favor, preencha todos os campos.");
             setLoading(false);
             return;
         }
 
+        if (password !== confirmPassword) {
+            setError("As senhas não coincidem.");
+            setLoading(false);
+            return;
+        }
+
         try {
-            const URL = "http://localhost:5173/api/login";
+            const URL = "http://localhost:5173/api/signup";
             await new Promise((resolve) => setTimeout(resolve, 100)); {/*Fake delay, check if the link is correct (localhost*/ }
             if (email && password) {
-                navigate('/Home');
+                navigate('/home');
             }
         } catch (err) {
             console.error(err);
-            setError("Aconteceu um erro ao tentar fazer o login.");
+            setError("Aconteceu um erro ao tentar fazer o cadastro.");
         } finally {
             setLoading(false);
         }
     };
 
     return (
-        <LoginContainer>
+        <SignupContainer>
             <Logo src="./src/assets/logo.svg" alt="Logo" style={{ maxHeight: "50px" }} />
-            <LoginForm onSubmit={handleSubmit}>
-                <Title>Entre com sua conta</Title>
+            <SignupForm onSubmit={handleSubmit}>
+                <Title>Crie sua conta</Title>
 
                 <div className="mb-2 text-start">
                     <label htmlFor="email" className="form-label fs-4">E-mail</label>
@@ -170,27 +162,33 @@ function Login() {
                     />
                 </div>
 
-                <ForgotPasswordLink href="#" >Esqueceu a senha?</ForgotPasswordLink>
+                <div className="mb-2 text-start">
+                    <label htmlFor="confirmSenha" className="form-label fs-4">Confirmar Senha</label>
+                    <Input
+                        type="password"
+                        name="confirmSenha"
+                        id="confirmSenha"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                        placeholder="Confirmar Senha"
+                        required
+                    />
+                </div>
 
                 {error && <ErrorMessage>{error}</ErrorMessage>}
 
                 <Button type="submit" disabled={loading} className="mt-3">
-                    {loading ? "Carregando..." : "Entrar"}
+                    {loading ? "Carregando..." : "Cadastrar"}
                 </Button>
 
-                <div>
-                    <Terms>
-                        Ao clicar em Continuar, você aceita o Contrato do Usuário, a Política de Privacidade e a Política de Cookies do CaseLink.
-                    </Terms>
-                </div>
                 <div className="mt-4 text-center">
                     <p>
-                        Não tem uma conta? <a href="/Signup" className="text-decoration-none" style={{ color: "#386A3f" }}>Cadastre-se aqui</a>
+                        Já tem uma conta? <a href="/login" className="text-decoration-none" style={{ color: "#386A3f" }}>Faça login aqui</a>
                     </p>
                 </div>
-            </LoginForm>
-        </LoginContainer>
+            </SignupForm>
+        </SignupContainer>
     );
 }
 
-export default Login;
+export default Signup;
