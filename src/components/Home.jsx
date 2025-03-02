@@ -7,10 +7,10 @@ import styled from "styled-components";
 
 function Home() {
   {/*Get the current location of the page*/ }
-const location = useLocation();
+  const location = useLocation();
 
   {/*Testing styled-components for input here I could also use style inline*/ }
-const SearchInput = styled.input` 
+  const SearchInput = styled.input` 
   padding: 10px;
   padding-left: 35px;
   border: 1px solid transparent;
@@ -39,7 +39,7 @@ const SearchInput = styled.input`
   }
   `
 
-const Icons = styled.li`
+  const Icons = styled.li`
   display:flex;
   justify-content: center;
   margin-left: 15px;
@@ -53,7 +53,7 @@ const Icons = styled.li`
   }
   `
 
-const TitleGreen = styled.h2`
+  const TitleGreen = styled.h2`
   text-align: center;
   margin-bottom: 1rem;
   background-color: rgb(55, 139, 80);
@@ -66,7 +66,7 @@ const TitleGreen = styled.h2`
   margin-right: auto;
   `
 
-const TitleDark = styled.h2`
+  const TitleDark = styled.h2`
   text-align: center;
   margin-bottom: 1rem;
   background-color: rgb(66, 70, 73);
@@ -79,7 +79,7 @@ const TitleDark = styled.h2`
   margin-right: auto;
   `
 
-const CardBodyJob = styled.div`
+  const CardBodyJob = styled.div`
   min-height: 190px;
   padding: 3rem 1.25rem;
   display: flex;
@@ -97,7 +97,7 @@ const CardBodyJob = styled.div`
   }
   `
 
-const CardBodyFeedback = styled.div`
+  const CardBodyFeedback = styled.div`
   min-height: 150px;
   padding: 1.25rem;
   display: flex;
@@ -110,18 +110,18 @@ const CardBodyFeedback = styled.div`
   }
   `
 
-const CardBorderNone = styled.div`
+  const CardBorderNone = styled.div`
   border: none;
   }
   `
-  
-const CardBorderZero = styled.div`
+
+  const CardBorderZero = styled.div`
   border: solid #fff;
   padding: 18px;
   `
 
-const Footer = styled.footer`
-  background-color: #386A3f; /* Cor principal da identidade visual */
+  const Footer = styled.footer`
+  background-color: #386A3f;
   color: white;
   padding: 40px 0;
   text-align: center;
@@ -151,7 +151,7 @@ const Footer = styled.footer`
 
 
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <div className="d-flex flex-column min-vh-100 overflow-hidden">
       <div className="navbar navbar-expand-lg bg-light px-lg-5 p-0 shadow-sm">
         <div className="container-fluid justify-content-start">
           <img src="./src/assets/logo.svg" alt="Logo" className="img-fluid" style={{ maxHeight: "50px" }} />
@@ -160,7 +160,7 @@ const Footer = styled.footer`
             placeholder="Pesquisar"
             className="mx-2"
           />
-          <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style={{ outline: "none"}}>
+          <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style={{ outline: "none" }}>
             <span className="navbar-toggler-icon"></span>
           </button>
         </div>
@@ -169,32 +169,32 @@ const Footer = styled.footer`
             <Icons>
               {/*Using the react-router-dom link*/}
               <Link
-                to="#"
-                className= {`nav-link ${location.pathname === "#" ? "active" : "p-0 my-1"}`}
+                to="/Home"
+                className={`nav-link ${location.pathname === "Home" ? "active" : "p-0 my-1"}`}
               >
                 <i className="bi bi-house-door text fs-2"></i>
               </Link>
             </Icons>
             <Icons>
               <Link
-                to="#"
-                className={`nav-link ${location.pathname === "#" ? "active" : "p-0 my-1"}`}
+                to="/Profile"
+                className={`nav-link ${location.pathname === "Profile" ? "active" : "p-0 my-1"}`}
               >
                 <i className="bi bi-file-earmark-post text fs-2"></i>
               </Link>
             </Icons>
             <Icons>
               <Link
-                to="#"
-                className={`nav-link ${location.pathname === "#" ? "active" : "p-0 my-1"}`}
+                to="/Notifications"
+                className={`nav-link ${location.pathname === "Notifications" ? "active" : "p-0 my-1"}`}
               >
                 <i className="bi bi-bell text fs-2"></i>
               </Link>
             </Icons>
             <Icons>
               <Link
-                to="/Login"
-                className={`nav-link ${location.pathname === "/login" ? "active" : "p-0 my-1"}`}
+                to="/login"
+                className={`nav-link ${location.pathname === "Login" ? "active" : "p-0 my-1"}`}
               >
                 <i className="bi bi-person-circle text fs-2"></i>
               </Link>
