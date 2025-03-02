@@ -149,9 +149,8 @@ function Home() {
   }
   `
 
-
   return (
-    <div className="d-flex flex-column min-vh-100 overflow-hidden">
+    <div className="d-flex flex-column min-vh-100">
       <div className="navbar navbar-expand-lg bg-light px-lg-5 p-0 shadow-sm">
         <div className="container-fluid justify-content-start">
           <img src="./src/assets/logo.svg" alt="Logo" className="img-fluid" style={{ maxHeight: "50px" }} />

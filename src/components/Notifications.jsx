@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import styled from "styled-components";
 
-function Home() {
+function Notifications() {
   const location = useLocation();
 
   const SearchInput = styled.input`
@@ -177,4 +177,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Notifications;

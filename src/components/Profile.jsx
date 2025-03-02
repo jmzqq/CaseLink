@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import styled from "styled-components";
 
-function Home() {
+function Profile() {
   {/*Get the current location of the page*/ }
 const location = useLocation();
 
@@ -109,4 +109,4 @@ const Icons = styled.li`
   );
 }
 
-export default Home;
+export default Profile;
