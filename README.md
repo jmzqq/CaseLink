@@ -4,7 +4,7 @@ O **CaseLink** é um projeto experimental desenvolvido para praticar conceitos d
 
 **🚀 Tecnologias:**
 * **Frontend:** React, Vite
-* **Outras dependências:** axios, cors, react-dom, react-router-dom, bootstrap, express
+* **Outras dependências:** axios, cors, react-dom, react-router-dom, react-helmet bootstrap, bootstrap-icons, express, styled-components, popper.js (algumas não foram utilizadas)
 
 **🖥️ Como usar:**
 * **Frontend:**
